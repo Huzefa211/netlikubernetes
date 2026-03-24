@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: netliserver
-        image: huzefa211/kbimg
+        image: IMAGE_PLACEHOLDER
         ports:
         - containerPort: 80
