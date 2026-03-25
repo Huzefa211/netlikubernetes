@@ -45,7 +45,7 @@ pipeline {
     
     stage("Deploy to K8s") {
             steps {
-                withAWS(credentials: 'aws-creds') {
+                withAWS(credentials: 'aws-cred') {
                 sh 'aws eks --region us-east-1 update-kubeconfig --name netlicluster'
                 sh "sed -i 's|IMAGE_PLACEHOLDER|${IMAGE_NAME}:${IMAGE_TAG}|g' k8s/deployment.yaml"
                         sh "kubectl apply -f k8s/deployment.yaml"
